@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+* {
+  font-family: "Roboto", sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0px auto;
+  width: 256px;
+  text-align: center;
+  box-shadow: 12px 12px 32px rgba(13, 39, 80, 0.25), -10px 10px 15px #fff;
+  border-radius: 5px;
+  user-select: none;
+}
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(60px, auto);
+}
+.container form input {
+  height: 75px;
+  width: 249px;
+  text-align: right;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #ececec;
+  color: #0b254e;
+  /* border-radius: 10px 10px 0px 0px; */
+  box-shadow: 6px 6px 8px rgba(1, 39, 80, 0.25), -6px -6px 10px #fff,
+    inset -2px -2px rgba(255, 255, 255, 0.7),
+    inset 5px 5px 8px rgba(13, 39, 80, 0.2);
+  outline: none;
+  border: none;
+  user-select: none;
   pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#clear {
+  grid-column: 1/3;
+  background-color: rgb(235, 54, 54);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#clear,
+#backSpace,
+#equal {
+  border-radius: 5px !important;
+}
+#backSpace {
+  background-color: rgb(83, 76, 76);
   color: white;
+  border-radius: 5px !important;
 }
-
-.App-link {
-  color: #61dafb;
+#equal {
+  grid-column: 3/5;
+  background-color: rgb(86, 189, 86);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  margin: 5px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #131212;
+  box-shadow: 4px 4px 8px rgba(13, 39, 80, 0.25), -4px -4px 8px #fff;
+  transition: 0.5s;
+}
+button:hover {
+  background-color: #11e6e6 !important;
+}
+.container .keypad .tasksBtn {
+  color: #f05811 !important;
 }
